@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "406534024180",
+    "firebase_url": "https://diferencial-19fba.firebaseio.com",
+    "project_id": "diferencial-19fba",
+    "storage_bucket": "diferencial-19fba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406534024180:android:b16dbfea337e175ec867a1",
+        "android_client_info": {
+          "package_name": "com.rerowx.diferencial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406534024180-kdi39tg5pgepj4gpq958htmivii575h9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFfkaW6YZXe6n8XhAzSXOokdBSt5hpYGc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406534024180-kdi39tg5pgepj4gpq958htmivii575h9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
