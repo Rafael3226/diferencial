@@ -1,22 +1,23 @@
 import 'package:diferencial/services/authentication.dart';
 import 'package:flutter/material.dart';
 
-class SignIn extends StatefulWidget {
+class Register extends StatefulWidget {
 
   final Function toggleView;
-  SignIn({ this.toggleView });
+  Register({ this.toggleView });
 
   @override
-  _SignInState createState() => _SignInState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _SignInState extends State<SignIn> {
+class _RegisterState extends State<Register> {
 
   final AuthenticationService _auth = AuthenticationService();
 
   // text field state
   String email = '';
-  String password = '';
+  String password1 = '';
+  String password2 = '';
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +26,10 @@ class _SignInState extends State<SignIn> {
       appBar: AppBar(
         backgroundColor: Colors.red[400],
         elevation: 0.0,
-        title: Text('Iniciar sesión'),
+        title: Text('Registro'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon( Icons.person_add , color: Colors.white),
+            icon: Icon(Icons.vpn_key, color:  Colors.white ,),
             label: Text(''),
             onPressed: () => widget.toggleView(),
           ),
@@ -55,7 +56,17 @@ class _SignInState extends State<SignIn> {
                 ),
                 obscureText: true,
                 onChanged: (val) {
-                  setState(() => password = val);
+                  setState(() => password1 = val);
+                },
+              ),
+              SizedBox(height: 20.0),
+              TextFormField(
+                decoration: const InputDecoration(
+                  hintText: 'Repetir Contraseña',
+                ),
+                obscureText: true,
+                onChanged: (val) {
+                  setState(() => password2 = val);
                 },
               ),
               SizedBox(height: 20.0),
@@ -67,7 +78,8 @@ class _SignInState extends State<SignIn> {
                 ),
                 onPressed: () async {
                   print(email);
-                  print(password);
+                  print(password1);
+                  print(password2);
                 }
               ),
             ],

@@ -1,6 +1,5 @@
-//import 'package:diferencial/screens/auth/auth.dart';
-import 'package:diferencial/models/user.dart';
 import 'package:diferencial/screens/auth/auth.dart';
+import 'package:diferencial/models/user.dart';
 import 'package:diferencial/screens/home/home.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
