@@ -10,7 +10,6 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
       title: Text('Calculo Diferencial'),
-      backgroundColor: Colors.red[800],
       elevation: 0.0,
       actions: <Widget>[
         FlatButton.icon(
@@ -23,7 +22,6 @@ class Home extends StatelessWidget {
       ],
     ),
       body: Container(
-        color: Colors.grey[400],
         child: Column(
           children: <Widget>[
             Container(
@@ -101,7 +99,6 @@ class Home extends StatelessWidget {
         child:  Icon(
             Icons.file_download,
         ), //Icons.file_download
-        backgroundColor: Colors.red[800],
       ),
     );
   }

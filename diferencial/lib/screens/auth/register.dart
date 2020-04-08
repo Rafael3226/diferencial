@@ -1,4 +1,6 @@
 import 'package:diferencial/services/authentication.dart';
+import 'package:diferencial/shared/constants.dart';
+import 'package:diferencial/shared/loading.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -13,23 +15,23 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
 
   final AuthenticationService _auth = AuthenticationService();
+  final _formKey = GlobalKey<FormState>();
 
   // text field state
   String email = '';
-  String password1 = '';
-  String password2 = '';
+  String password = '';
+  String error = '';
+  bool loading = false;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[200],
+    return loading ? Loading() : Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red[400],
         elevation: 0.0,
         title: Text('Registro'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon(Icons.vpn_key, color:  Colors.white ,),
+            icon: Icon(Icons.vpn_key),
             label: Text(''),
             onPressed: () => widget.toggleView(),
           ),
@@ -38,50 +40,53 @@ class _RegisterState extends State<Register> {
       body: Container(
         padding: EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
         child: Form(
+          key: _formKey,
           child: Column(
             children: <Widget>[
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Correo Institucional',
-                ),
+                validator: (val) => !val.contains('@upb.edu.co')? 'Ingrese un correo institucional': null,
+                decoration: textInputDecoration.copyWith(hintText: 'Correo Institucional'),
                 onChanged: (val) {
                   setState(() => email = val);
                 },
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Contraseña',
-                ),
+                validator: (val) => val.length < 6 ? 'La contraseña debe ser de 6 o mas caracteres': null,
+                decoration: textInputDecoration.copyWith(hintText: 'Contraseña'),
                 obscureText: true,
                 onChanged: (val) {
-                  setState(() => password1 = val);
+                  setState(() => password = val);
                 },
               ),
               SizedBox(height: 20.0),
               TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Repetir Contraseña',
-                ),
+                validator: (val) => val != password ? 'Las contraseñas no coinciden': null,
+                decoration: textInputDecoration.copyWith(hintText: 'Repetir Contraseña'),
                 obscureText: true,
-                onChanged: (val) {
-                  setState(() => password2 = val);
-                },
               ),
               SizedBox(height: 20.0),
               RaisedButton(
-                color: Colors.red[400],
                 child: Text(
                   'Registrarse',
-                  style: TextStyle(color: Colors.white),
                 ),
                 onPressed: () async {
-                  print(email);
-                  print(password1);
-                  print(password2);
+                  if(_formKey.currentState.validate()){
+                    setState(()=> loading = true );
+                    dynamic result = await _auth.createUserWithEmailAndPassword(email.trim() , password);
+                    if( result == null){
+                      setState(() {
+                        error = 'Error al crear usuario';
+                        loading = false;
+                        }
+                      );
+                    }
+                  }
                 }
               ),
+              SizedBox(height: 12.0),
+              Text(error),
             ],
           ),
         ),
