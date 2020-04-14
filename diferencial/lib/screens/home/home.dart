@@ -1,3 +1,10 @@
+import 'package:diferencial/screens/home/caps/1-prologo/prologo.dart';
+import 'package:diferencial/screens/home/caps/2-desigualdades/desigualdades.dart';
+import 'package:diferencial/screens/home/caps/3-funciones/funciones.dart';
+import 'package:diferencial/screens/home/caps/4-limites/limites.dart';
+import 'package:diferencial/screens/home/caps/5-continuidad/continuidad.dart';
+import 'package:diferencial/screens/home/caps/6-derivacion/derivacion.dart';
+import 'package:diferencial/screens/home/caps/7-Aplicaciones/aplicaciones.dart';
 import 'package:diferencial/services/authentication.dart';
 import 'package:flutter/material.dart';
 
@@ -13,8 +20,8 @@ class Home extends StatelessWidget {
       elevation: 0.0,
       actions: <Widget>[
         FlatButton.icon(
-              icon: Icon(Icons.person),
-              label: Text('logout'),
+              icon: Icon(Icons.exit_to_app),
+              label: Text(''),
               onPressed: () async {
                 await _auth.signOut();
               },
@@ -22,84 +29,96 @@ class Home extends StatelessWidget {
       ],
     ),
       body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              child: Text(
-                'Capitulo: Funciones',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+        child: ListView(
+          padding: const EdgeInsets.all(8),
+          children: [
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Prologo()),
+                );
+              },
+              child: const Text(
+                'Prologo',
+                style: TextStyle(fontSize: 20)
               ),
             ),
-            Container(
-              child: Text('Tema: Definición',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Desigualdades()),
+                );
+              },
+              child: const Text(
+                'Desigualdades',
+                style: TextStyle(fontSize: 20)
               ),
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  RaisedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.book),
-                      label: Text('Explicacion')
-                  ),
-                  RaisedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.account_balance),
-                      label: Text('Ejemplos')
-                  ),
-                  RaisedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(Icons.work),
-                      label: Text('Ejercicios')
-                  ),
-                ],
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Funciones()),
+                );
+              },
+              child: const Text(
+                'Funciones',
+                style: TextStyle(fontSize: 20)
               ),
             ),
-            Container(
-              margin: EdgeInsets.all(15) ,
-
-              child: Text('Una desigualdad es un enunciado que compara dos expresiones algebraicas utilizando las relaciones mayor o igual que ( ≥ ), menor o igual que ( ≤ ), mayor que ( > ), menor que ( < ). Resolver una desigualdad consiste en encontrar el conjunto de números reales que hacen verdadera dicha proposición. Este conjunto solución por lo general consta de un intervalo o la unión de varios intervalos.',
-                  textAlign: TextAlign.justify,
-                  style: TextStyle(
-                  fontSize: 16.0,
-                ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Limites()),
+                );
+              },
+              child: const Text(
+                'Límites',
+                style: TextStyle(fontSize: 20)
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(15,1, 15,1),
-              child: Center(
-                child: Image(
-                  image: AssetImage('assets/intervalos_finitos.png'),
-                ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Continuidad()),
+                );
+              },
+              child: const Text(
+                'Continuidad',
+                style: TextStyle(fontSize: 20)
               ),
             ),
-            Container(
-              margin: EdgeInsets.fromLTRB(15,1, 15,1),
-              child: Center(
-                child: Image(
-                  image: AssetImage('assets/intervalos_infinitos.png'),
-                ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Derivacion()),
+                );
+              },
+              child: const Text(
+                'Derivación',
+                style: TextStyle(fontSize: 20)
+              ),
+            ),
+            RaisedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Aplicaciones()),
+                );
+              },
+              child: const Text(
+                'Aplicaciones de la Derivación',
+                style: TextStyle(fontSize: 20)
               ),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        child:  Icon(
-            Icons.file_download,
-        ), //Icons.file_download
-      ),
+      )
     );
   }
 }
