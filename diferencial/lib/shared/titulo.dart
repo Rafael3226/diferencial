@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 
-class Titulo extends StatefulWidget {
+class Titulo extends StatelessWidget {
+  final String texto;
 
-  @override
-  _TituloState createState() => _TituloState();
-}
-
-class _TituloState extends State<Titulo> {
-
-  String texto;
+  Titulo({this.texto});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
+      child: Text(
+        texto,
+        textAlign: TextAlign.justify,
+        style: TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
