@@ -1,5 +1,5 @@
 import 'package:diferencial/screens/home/caps/1-prologo/prologo.dart';
-import 'package:diferencial/screens/home/caps/2-desigualdades/desigualdades.dart';
+import 'package:diferencial/screens/home/caps/2-desigualdades/explicacion.dart';
 import 'package:diferencial/screens/home/caps/3-funciones/funciones.dart';
 import 'package:diferencial/screens/home/caps/4-limites/limites.dart';
 import 'package:diferencial/screens/home/caps/5-continuidad/continuidad.dart';
@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
       elevation: 0.0,
       actions: <Widget>[
         FlatButton.icon(
-              icon: Icon(Icons.exit_to_app),
+              icon: Icon(Icons.exit_to_app , color: Colors.white,),
               label: Text(''),
               onPressed: () async {
                 await _auth.signOut();
@@ -30,9 +30,10 @@ class Home extends StatelessWidget {
     ),
       body: Container(
         child: ListView(
-          padding: const EdgeInsets.all(8),
+          padding: const EdgeInsets.all(10),
           children: [
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -45,10 +46,11 @@ class Home extends StatelessWidget {
               ),
             ),
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Desigualdades()),
+                  MaterialPageRoute(builder: (context) => DesigualdadesExplicacion()),
                 );
               },
               child: const Text(
@@ -57,6 +59,7 @@ class Home extends StatelessWidget {
               ),
             ),
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -69,6 +72,7 @@ class Home extends StatelessWidget {
               ),
             ),
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -81,6 +85,7 @@ class Home extends StatelessWidget {
               ),
             ),
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -93,6 +98,7 @@ class Home extends StatelessWidget {
               ),
             ),
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,
@@ -105,6 +111,7 @@ class Home extends StatelessWidget {
               ),
             ),
             RaisedButton(
+              padding: const EdgeInsets.all(10),
               onPressed: () {
                 Navigator.push(
                   context,

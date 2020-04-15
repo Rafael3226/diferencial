@@ -31,7 +31,7 @@ class _SignInState extends State<SignIn> {
         title: Text('Iniciar sesión'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon( Icons.person_add),
+            icon: Icon( Icons.person_add , color: Colors.white,),
             label: Text(''),
             onPressed: () => widget.toggleView(),
           ),

@@ -31,7 +31,7 @@ class _RegisterState extends State<Register> {
         title: Text('Registro'),
         actions: <Widget>[
           FlatButton.icon(
-            icon: Icon(Icons.vpn_key),
+            icon: Icon(Icons.vpn_key ,  color: Colors.white,),
             label: Text(''),
             onPressed: () => widget.toggleView(),
           ),

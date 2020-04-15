@@ -10,7 +10,46 @@ class Aplicaciones extends StatelessWidget {
       title: Text('Aplicaciones de la Derivación'),
       elevation: 0.0,
     ),
-      body: Text("7"),
+      body: Container(
+        child: ListView(
+          padding: const EdgeInsets.all(10),
+          children: [
+            RaisedButton(
+              padding: const EdgeInsets.all(10),
+              onPressed: () {},
+              child: const Text(
+                'Valores Máximos y Mínimos',
+                style: TextStyle(fontSize: 20)
+              ),
+            ),
+            RaisedButton(
+              padding: const EdgeInsets.all(10),
+              onPressed: () {},
+              child: const Text(
+                'Problemas de Optimización',
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 20)
+              ),
+            ),
+            RaisedButton(
+              padding: const EdgeInsets.all(10),
+              onPressed: () {},
+              child: const Text(
+                'Diferenciales',
+                style: TextStyle(fontSize: 20)
+              ),
+            ),
+            RaisedButton(
+              padding: const EdgeInsets.all(10),
+              onPressed: () {},
+              child: const Text(
+                'Regla de L\'Hopital',
+                style: TextStyle(fontSize: 20)
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
