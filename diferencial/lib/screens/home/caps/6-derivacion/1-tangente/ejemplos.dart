@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 
-class EjerciciosDesigualdades extends StatefulWidget {
+class TangenteEjemplos extends StatefulWidget {
   final Function cambiar;
-  EjerciciosDesigualdades({this.cambiar});
+  TangenteEjemplos({this.cambiar});
   @override
-  _EjerciciosDesigualdadesState createState() =>
-      _EjerciciosDesigualdadesState();
+  _TangenteEjemplosState createState() => _TangenteEjemplosState();
 }
 
-class _EjerciciosDesigualdadesState extends State<EjerciciosDesigualdades> {
+class _TangenteEjemplosState extends State<TangenteEjemplos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Desigualdades'),
+        title: Text('Recta Tangente'),
         elevation: 0.0,
       ),
       body: ListView(
@@ -46,7 +45,7 @@ class _EjerciciosDesigualdadesState extends State<EjerciciosDesigualdades> {
           ),
           Container(
               padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text("Ejercicios")),
+              child: Text("Ejemplos")),
         ],
       ),
     );
