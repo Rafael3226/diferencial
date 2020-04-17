@@ -45,7 +45,14 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    # capitulo 1
+    - assets/1-desigualdades/explicacion/
+    - assets/1-desigualdades/ejemplos/
+    - assets/1-desigualdades/ejercicios/
+    # Capitulo 2 <=> Tema 1
+    - assets/2-funciones/1-definicion/explicacion/
+    - assets/2-funciones/1-definicion/ejemplos/
+    - assets/2-funciones/1-definicion/ejercicios/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

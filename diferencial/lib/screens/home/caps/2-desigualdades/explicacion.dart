@@ -47,16 +47,28 @@ class _ExplicacionDesigualdadesState extends State<ExplicacionDesigualdades> {
           texto:
               'En este capítulo encontrará la definición de desigualdad, las propiedades que deben cumplir en las desigualdades y una valiosa cantidad de ejercicios resueltos y otros propuestos. Este tema se hace importante conocerlo, comprenderlo y dominarlo para temas que encontrará en el curso de cálculo diferencial.',
         ),
-        Titulo(texto: "Definicion"),
+        Titulo(
+          texto: "Definicion",
+        ),
         Parrafo(
           texto:
               'Una desigualdad es un enunciado que compara dos expresiones algebraicas utilizando las relaciones mayor o igual que ( ≥ ), menor o igual que ( ≤ ), mayor que ( > ), menor que ( < ). Resolver una desigualdad consiste en encontrar el conjunto de números reales que hacen verdadera dicha proposición. Este conjunto solución por lo general consta de un intervalo o la unión de varios intervalos.',
         ),
-        Titulo(texto: "Clases de intervalos:"),
-        Titulo(texto: "Intervalos finitos"),
-        Imagen(ruta: 'assets/1-desigualdades/explicacion/2.png'),
-        Titulo(texto: "Intervalos infinitos"),
-        Imagen(ruta: 'assets/1-desigualdades/explicacion/3.png'),
+        Titulo(
+          texto: "Clases de intervalos:",
+        ),
+        Titulo(
+          texto: "Intervalos finitos",
+        ),
+        Imagen(
+          ruta: 'assets/1-desigualdades/explicacion/2.png',
+        ),
+        Titulo(
+          texto: "Intervalos infinitos",
+        ),
+        Imagen(
+          ruta: 'assets/1-desigualdades/explicacion/3.png',
+        ),
       ],
     );
   }

@@ -1,7 +1,7 @@
 import 'package:diferencial/shared/titulo.dart';
 import 'package:flutter/material.dart';
 
-class Ejercicio extends StatelessWidget {
+class EjercicioImagen extends StatelessWidget {
   //--
   final String numero;
 
@@ -9,7 +9,7 @@ class Ejercicio extends StatelessWidget {
 
   final String imagen;
 
-  Ejercicio({this.numero, this.onChanged, this.imagen});
+  EjercicioImagen({this.numero, this.onChanged, this.imagen});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class Ejercicio extends StatelessWidget {
               Titulo(texto: numero + '.'),
               Image.asset(
                 imagen,
-                scale: 1.5,
+                scale: 2,
               ),
             ],
           ),
