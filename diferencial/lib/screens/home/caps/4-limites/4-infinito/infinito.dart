@@ -9,35 +9,29 @@ class LimitesInfinito extends StatefulWidget {
 }
 
 class _LimitesInfinitoState extends State<LimitesInfinito> {
-  int caso;
-  void cambiar(int x) {
-    //print(showSignIn.toString());
-    setState(() => caso = x);
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return InfinitoExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return InfinitoEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return InfinitoEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return InfinitoExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Límites al Infinito'),
+        ),
+        body: TabBarView(
+          children: [
+            InfinitoExplicacion(),
+            InfinitoEjemplos(),
+            InfinitoEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }

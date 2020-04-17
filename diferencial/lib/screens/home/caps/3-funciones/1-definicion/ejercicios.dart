@@ -1,8 +1,9 @@
+import 'package:diferencial/shared/centrado.dart';
+import 'package:diferencial/shared/ejercicio.dart';
+import 'package:diferencial/shared/parrafo.dart';
 import 'package:flutter/material.dart';
 
 class DefinicionEjercicios extends StatefulWidget {
-  final Function cambiar;
-  DefinicionEjercicios({this.cambiar});
   @override
   _DefinicionEjerciciosState createState() => _DefinicionEjerciciosState();
 }
@@ -10,44 +11,51 @@ class DefinicionEjercicios extends StatefulWidget {
 class _DefinicionEjerciciosState extends State<DefinicionEjercicios> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Definición'),
-        elevation: 0.0,
-      ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                RaisedButton.icon(
-                    onPressed: () {
-                      widget.cambiar(0);
-                    },
-                    icon: Icon(Icons.book),
-                    label: Text('Explicacion')),
-                RaisedButton.icon(
-                    onPressed: () {
-                      widget.cambiar(1);
-                    },
-                    icon: Icon(Icons.account_balance),
-                    label: Text('Ejemplos')),
-                RaisedButton.icon(
-                    onPressed: () {
-                      widget.cambiar(2);
-                    },
-                    icon: Icon(Icons.work),
-                    label: Text('Ejercicios')),
-              ],
-            ),
-          ),
-          Container(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 0),
-              child: Text("Ejercicios")),
-        ],
-      ),
+    return ListView(
+      children: <Widget>[
+        Centrado(texto: 'Ejercicios Propuestos'),
+        Parrafo(texto: 'Encuentre el dominio de la función dada.'),
+        Ejercicio(
+          numero: '1',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/1.png',
+        ),
+        Ejercicio(
+          numero: '2',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/2.png',
+        ),
+        Ejercicio(
+          numero: '3',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/3.png',
+        ),
+        Ejercicio(
+          numero: '4',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/4.png',
+        ),
+        Ejercicio(
+          numero: '5',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/5.png',
+        ),
+        Ejercicio(
+          numero: '6',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/6.png',
+        ),
+        Ejercicio(
+          numero: '7',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/7.png',
+        ),
+        Ejercicio(
+          numero: '8',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/8.png',
+        ),
+        Ejercicio(
+          numero: '9',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/7.png',
+        ),
+        Ejercicio(
+          numero: '10',
+          imagen: 'assets/2-funciones/1-definicion/ejercicios/8.png',
+        ),
+      ],
     );
   }
 }

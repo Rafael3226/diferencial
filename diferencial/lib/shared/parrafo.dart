@@ -8,7 +8,7 @@ class Parrafo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(10, 0, 10, 5),
+      padding: const EdgeInsets.fromLTRB(10, 5, 10, 5),
       child: Text(
         texto,
         textAlign: TextAlign.justify,

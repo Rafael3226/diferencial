@@ -17,27 +17,27 @@ class _LimitesLateralesState extends State<LimitesLaterales> {
 
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return LateralesExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return LateralesEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return LateralesEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return LateralesExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Límites Laterales e Infinitos'),
+        ),
+        body: TabBarView(
+          children: [
+            LateralesExplicacion(),
+            LateralesEjemplos(),
+            LateralesEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }

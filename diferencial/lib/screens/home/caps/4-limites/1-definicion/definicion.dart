@@ -9,35 +9,29 @@ class LimitesDefinicion extends StatefulWidget {
 }
 
 class _LimitesDefinicionState extends State<LimitesDefinicion> {
-  int caso;
-  void cambiar(int x) {
-    //print(showSignIn.toString());
-    setState(() => caso = x);
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return LimiteDefinicionExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return LimiteDefinicionEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return LimiteDefinicionEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return LimiteDefinicionExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Definición'),
+        ),
+        body: TabBarView(
+          children: [
+            LimiteDefinicionExplicacion(),
+            LimiteDefinicionEjemplos(),
+            LimiteDefinicionEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -8,11 +8,9 @@ class Imagen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+      margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Center(
-        child: Image(
-          image: AssetImage(ruta),
-        ),
+        child: Image.asset(ruta),
       ),
     );
   }

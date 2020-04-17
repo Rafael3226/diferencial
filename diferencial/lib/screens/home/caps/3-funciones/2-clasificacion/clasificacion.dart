@@ -17,27 +17,27 @@ class _FuncionesClasificacionState extends State<FuncionesClasificacion> {
 
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return ClasificacionExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return ClasificacionEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return ClasificacionEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return ClasificacionExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Clasificación'),
+        ),
+        body: TabBarView(
+          children: [
+            ClasificacionExplicacion(),
+            ClasificacionEjemplos(),
+            ClasificacionEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }

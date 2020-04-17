@@ -9,35 +9,29 @@ class Desigualdades extends StatefulWidget {
 }
 
 class _DesigualdadesState extends State<Desigualdades> {
-  int caso;
-  void cambiar(int x) {
-    //print(showSignIn.toString());
-    setState(() => caso = x);
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return ExplicacionDesigualdades(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return EjemplosDesigualdades(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return EjerciciosDesigualdades(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return ExplicacionDesigualdades(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Desigualdades'),
+        ),
+        body: TabBarView(
+          children: [
+            ExplicacionDesigualdades(),
+            EjemplosDesigualdades(),
+            EjerciciosDesigualdades(),
+          ],
+        ),
+      ),
+    );
   }
 }

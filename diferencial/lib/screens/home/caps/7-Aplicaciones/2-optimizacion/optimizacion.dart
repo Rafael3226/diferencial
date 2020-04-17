@@ -10,35 +10,29 @@ class AplicacionesOptimizacion extends StatefulWidget {
 }
 
 class _AplicacionesOptimizacionState extends State<AplicacionesOptimizacion> {
-  int caso;
-  void cambiar(int x) {
-    //print(showSignIn.toString());
-    setState(() => caso = x);
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return OptimizacionExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return OptimizacionEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return OptimizacionEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return OptimizacionExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Problemas de Optimizacion'),
+        ),
+        body: TabBarView(
+          children: [
+            OptimizacionExplicacion(),
+            OptimizacionEjemplos(),
+            OptimizacionEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }

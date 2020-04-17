@@ -9,35 +9,29 @@ class DerivacionCambio extends StatefulWidget {
 }
 
 class _DerivacionCambioState extends State<DerivacionCambio> {
-  int caso;
-  void cambiar(int x) {
-    //print(showSignIn.toString());
-    setState(() => caso = x);
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return CambioExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return CambioEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return CambioEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return CambioExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Razon de Cambio'),
+        ),
+        body: TabBarView(
+          children: [
+            CambioExplicacion(),
+            CambioEjemplos(),
+            CambioEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }

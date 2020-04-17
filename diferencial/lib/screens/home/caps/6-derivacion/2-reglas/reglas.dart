@@ -9,35 +9,29 @@ class DerivacionReglas extends StatefulWidget {
 }
 
 class _DerivacionReglasState extends State<DerivacionReglas> {
-  int caso;
-  void cambiar(int x) {
-    //print(showSignIn.toString());
-    setState(() => caso = x);
-  }
-
   @override
   Widget build(BuildContext context) {
-    switch (caso) {
-      case 0:
-        {
-          return ReglasExplicacion(cambiar: cambiar);
-        }
-        break;
-      case 1:
-        {
-          return ReglasEjemplos(cambiar: cambiar);
-        }
-        break;
-      case 2:
-        {
-          return ReglasEjercicios(cambiar: cambiar);
-        }
-        break;
-      default:
-        {
-          return ReglasExplicacion(cambiar: cambiar);
-        }
-        break;
-    }
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          bottom: TabBar(
+            tabs: [
+              Tab(icon: Icon(Icons.book)),
+              Tab(icon: Icon(Icons.account_balance)),
+              Tab(icon: Icon(Icons.border_color)),
+            ],
+          ),
+          title: Text('Reglas de Derivación'),
+        ),
+        body: TabBarView(
+          children: [
+            ReglasExplicacion(),
+            ReglasEjemplos(),
+            ReglasEjercicios(),
+          ],
+        ),
+      ),
+    );
   }
 }
